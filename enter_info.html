@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+  <title>salary: submit info</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+<h1>Enter Information</h1>
+
+<h2>{{.Name}}</h2>
+
+<p>Please enter your information. Once you have entered your information and a total of {{.MinSize}} people have entered theirs also, visting this page will show you the results.</p>
+
+<form action="/pool/salary" method="post" class="pure-form pure-form-stacked">
+  <legend>Salary Info</legend>
+  <fieldset>
+    <label for="amount">Salary in USD</label>
+    <input type="number" name="amount" id="amount" min="1" placeholder="12345" required>
+
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" value="Software Engineer">
+
+    <label for="exp">Years of experience</label>
+    <input type="number" name="yearsexperience" id="exp" min="0" max="123" placeholder="1">
+
+    <label for="hours">Hours per week</label>
+    <input type="number" name="hourswk" id="hours" min="1" max="168" placeholder="40">
+
+    Mandatory overtime
+    <label for="o1">
+      <input id="o1" type="radio" name="overtime" value="never" checked>
+      Never
+    </label>
+    <label for="o2">
+      <input id="o2" type="radio" name="overtime" value="rarely">
+      Rarely
+    </label>
+    <label for="o3">
+      <input id="o3" type="radio" name="overtime" value="sometimes">
+      Sometimes
+    </label>
+    <label for="o4">
+      <input id="o4" type="radio" name="overtime" value="often">
+      Often
+    </label>
+
+    Paid overtime
+    <label for="po1">
+      <input id="po1" type="radio" name="overtimepaid" value="unpaid" checked>
+      Unpaid
+    </label>
+    <label for="po2">
+      <input id="po2" type="radio" name="overtimepaid" value="paid">
+      Paid
+    </label>
+
+    Remote / Telecommuting
+    <label for="r1">
+      <input id="r1" type="radio" name="remote" value="no" checked>
+      No
+    </label>
+    <label for="r2">
+      <input id="r2" type="radio" name="remote" value="special">
+      Special (infrequently for things such as bad weather)
+    </label>
+    <label for="r3">
+      <input id="r3" type="radio" name="remote" value="partial">
+      Partial Telecommute
+    </label>
+    <label for="r4">
+      <input id="r4" type="radio" name="remote" value="yes">
+      Full Telecommute
+    </label>
+
+    Travel
+    <label for="t1">
+      <input id="t1" type="radio" name="travel" value="never" checked>
+      Never
+    </label>
+    <label for="t2">
+      <input id="t2" type="radio" name="travel" value="rarely">
+      Rarely
+    </label>
+    <label for="t3">
+      <input id="t3" type="radio" name="travel" value="sometimes">
+      Sometimes
+    </label>
+    <label for="t4">
+      <input id="t4" type="radio" name="travel" value="often">
+      Often
+    </label>
+
+    <input type="hidden" name="id" value="{{.UUID}}">
+
+    <input type="submit" value="Submit" class="pure-button pure-button-primary">
+  </fieldset>
+</form>
+
+</body>
+</html>
