@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+  <title>salary: view pool</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Salary Information</h1>
+  <h2>{{.PoolName}}</h2>
+
+  <table class="pure-table pure-table-striped">
+    <thead>
+      <th>Title</th>
+      <th>Salary</th>
+      <th>Hours</th>
+      <th>Exp</th>
+      <th>OT</th>
+      <th>Paid OT</th>
+      <th>Remote</th>
+      <th>Travel</th>
+    </thead>
+    <tbody>
+      {{range .Salaries}}
+        <tr>
+          <td>{{.Title}}</td>
+          <td>{{.Amount}}</td>
+          <td>{{.HoursWk}}</td>
+          <td>{{.YearsExperience}}</td>
+          <td>{{.Overtime}}</td>
+          <td>{{.OvertimePaid}}</td>
+          <td>{{.Remote}}</td>
+          <td>{{.Travel}}</td>
+        </tr>
+      {{end}}
+    </tbody>
+
+</body>
+</html>
